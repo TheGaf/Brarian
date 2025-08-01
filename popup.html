@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRARIAN</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      width: 380px;
+      height: 420px;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    
+    .popup .container {
+      width: 380px;
+      padding: 0;
+      max-width: none;
+    }
+  </style>
+</head>
+<body class="popup">
+  <div class="container">
+    <h1 class="brarian-logo">BRARIAN</h1>
+    
+    <div class="search-section">
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="What do you want to research?" 
+        autofocus
+        aria-label="Search query"
+      >
+      
+      <div class="categories-grid" role="group" aria-label="Search categories">
+        <div class="category-toggle">
+          <input type="checkbox" id="articles" checked>
+          <label for="articles">Articles</label>
+        </div>
+        <div class="category-toggle">
+          <input type="checkbox" id="news" checked>
+          <label for="news">News</label>
+        </div>
+        <div class="category-toggle">
+          <input type="checkbox" id="images">
+          <label for="images">Images</label>
+        </div>
+        <div class="category-toggle">
+          <input type="checkbox" id="videos">
+          <label for="videos">Videos</label>
+        </div>
+        <div class="category-toggle">
+          <input type="checkbox" id="academic">
+          <label for="academic">Academic</label>
+        </div>
+      </div>
+      
+      <button id="searchBtn" class="search-btn" type="button">Search</button>
+    </div>
+    
+    <div class="ai-section">
+      <div class="ai-toggle">
+        <input type="checkbox" id="aiAgent" checked>
+        <label for="aiAgent">AI Assistant</label>
+      </div>
+      <div class="ai-status" id="aiStatus" role="status" aria-live="polite">Checking AI agent...</div>
+    </div>
+    
+    <div class="recent-searches" id="recentSearches" style="display: none;">
+      <h4>Recent Searches</h4>
+      <div id="recentList" role="list"></div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRARIAN Search Results</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="brarian-logo">BRARIAN</h1>
+      
+      <div class="search-bar" role="search">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Refine your search..."
+          aria-label="Search query"
+        >
+        <button id="searchBtn" type="button">Search</button>
+      </div>
+      
+      <div class="query-info">
+        <h2 class="query-title" id="queryTitle">Loading...</h2>
+        <div class="ai-status" id="aiStatus" role="status"></div>
+      </div>
+      
+      <div class="suggestions" id="suggestions" style="display: none;">
+        <h4>Related searches:</h4>
+        <div class="suggestion-tags" id="suggestionTags" role="list"></div>
+      </div>
+      
+      <div class="ask-brarian" id="askBrarian" style="display: none;">
+        <h4>Ask BRARIAN</h4>
+        <div class="ask-input">
+          <input 
+            type="text" 
+            id="askInput" 
+            placeholder="Ask a follow-up question..."
+            aria-label="Follow-up question"
+          >
+          <button id="askBtn" type="button">Ask</button>
+        </div>
+      </div>
+    </div>
+    
+    <main id="results" class="categories-overview" role="main" aria-live="polite">
+      <div class="loading">Searching</div>
+    </main>
+  </div>
+  
+  <script src="results.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRARIAN Category View</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="brarian-logo">BRARIAN</h1>
+      
+      <nav class="navigation" role="navigation">
+        <a href="#" id="backBtn" class="back-btn btn">← Back to Results</a>
+        <div class="category-info">
+          <h2 class="category-title" id="categoryTitle">Loading...</h2>
+          <p class="category-subtitle" id="categorySubtitle"></p>
+        </div>
+        <div class="nav-spacer"></div>
+      </nav>
+      
+      <div class="filters" role="group" aria-label="Filter options">
+        <div class="filter-row">
+          <div class="filter-group">
+            <label for="sortBy">Sort by:</label>
+            <select id="sortBy" aria-label="Sort results by">
+              <option value="relevance">Relevance</option>
+              <option value="trust">Trust Score</option>
+              <option value="date">Date</option>
+              <option value="source">Source</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="trustFilter">Min Trust:</label>
+            <select id="trustFilter" aria-label="Minimum trust score">
+              <option value="0">All</option>
+              <option value="30">Low+</option>
+              <option value="50">Medium+</option>
+              <option value="80">High</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="sourceFilter">Source:</label>
+            <select id="sourceFilter" aria-label="Filter by source">
+              <option value="">All Sources</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <main id="results" class="results-grid" role="main" aria-live="polite">
+      <div class="loading">Loading category results</div>
+    </main>
+    
+    <div class="load-more" id="loadMore" style="display: none;">
+      <button class="load-more-btn" id="loadMoreBtn" type="button">Load More Results</button>
+    </div>
+  </div>
+  
+  <script src="category.js"></script>
+</body>
+</html>
